@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Z-pattern</title>
+</head>
+
+<body>
+    <div class="header">
+        <header>PET DOG</header>
+    </div>
+    <section class="container">
+        <div class="head">
+         <div class="logo">
+             <img src="img/logo.png" alt="">
+         </div>
+         <div class="menu">
+             <nav>
+                 <a href="#about">Giới Thiệu</a>
+                 <a href="#breeds">Giống Chó</a>
+                 <a href="#gallery">Thư Viện</a>
+                 <a href="#contact">Liên Hệ</a>
+             </nav>
+         </div>
+        </div>
+         <div class="content">
+             <article id="about" class="hidden">
+                  <div class="hidden-left">
+                    <div class="title">
+                        <h1>Chào mừng đến với Thế Giới <br>
+                            Của Những Người Yêu Chó!
+                        </h1>
+                    </div>
+                    <div class="main">
+                        <p>Trang Giới Thiệu là nơi bạn sẽ khám phá về thế giới động vật kỳ diệu của chúng ta.
+                           Chúng ta sẽ tìm hiểu về nguồn gốc và lịch sử của chó, cũng như những đặc điểm và 
+                           tính cách độc đáo mà chúng mang lại. Hãy cùng nhau đắm chìm trong thế giới tuyệt
+                           vời của những người bạn bốn chân này.
+                        </p>
+                    </div>
+                    <div class="btn">
+                        <button>Start learning today</button>
+                        <button>Sleeping, would to start tomorrow</button>
+                    </div>
+                </div>
+                <img src="img/Gioithieu.jpg" alt="">
+             </article>
+     
+             <article id="breeds" class="hidden">
+                <div class="hidden-left">
+                    <div class="title">
+                        <h1>Đa Dạng Và Đẹp Đẽ: Các Giống Chó Trên Thế Giới
+                        </h1>
+                    </div>
+                    <div class="main">
+                        <p>Trang Giống Chó sẽ giới thiệu về các giống chó phổ biến và độc đáo trên khắp thế giới. <br>
+                            Bạn sẽ được biết đến về các đặc điểm ngoại hình, tính cách, và câu chuyện lịch sử của từng giống. <br>
+                            Hãy khám phá sự đa dạng tuyệt vời của thế giới chó.
+                        </p>
+                    </div>
+                    <div class="btn">
+                        <button>Start learning today</button>
+                        <button>Sleeping, would to start tomorrow</button>
+                    </div>
+                </div>
+                <img src="img/GiongCho.png" alt="">
+             </article>
+     
+             <article id="gallery" class="hidden">
+                <div class="hidden-left">
+                    <div class="title">
+                        <h1>Thư Viện Chó Tuyệt Vời
+                        </h1>
+                    </div>
+                    <div class="main">
+                        <p>Trang Thư Viện là nơi bạn có thể thưởng thức những bức ảnh đẹp như tranh của chó từ cộng đồng yêu chó. <br>
+                            Bạn sẽ được ngắm nhìn những khoảnh khắc dễ thương, hài hước, và đôi khi là bí ẩn của những chú chó dễ thương. <br>
+                            Hãy để tâm hồn bạn được thư giãn với bộ sưu tập hình ảnh này.
+                        </p>
+                    </div>
+                    <div class="btn">
+                        <button>Start learning today</button>
+                        <button>Sleeping, would to start tomorrow</button>
+                    </div>
+                </div>
+                <img src="img/ThuVien.jpg" alt="">
+             </article>
+     
+             <article id="contact" class="hidden">
+                <div class="hidden-left">
+                    <div class="title">
+                        <h1>Liên Lạc Với Chúng Tôi
+                        </h1>
+                    </div>
+                    <div class="main">
+                        <p>Trang Liên Hệ là nơi bạn có thể chia sẻ ý kiến, đề xuất, và nếu có bất kỳ câu hỏi nào,
+                            hãy liên hệ trực tiếp với chúng tôi. Chúng tôi luôn mở đón nhận định và hợp tác từ cộng
+                            đồng yêu chó. Đừng ngần ngại chia sẻ tình yêu của bạn với chúng tôi!
+                        </p>
+                    </div>
+                    <div class="btn">
+                        <button>Start learning today</button>
+                        <button>Sleeping, would to start tomorrow</button>
+                    </div>
+                </div>
+                <img src="img/LienLac.jpg" alt="">
+             </article>
+         </div>
+
+     </section>
+     <script>
+        // Chức năng chuyển trang khi click vào menu
+        document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        // Ẩn tất cả các articles
+        document.querySelectorAll('article').forEach(article => {
+            article.classList.add('hidden');
+        });
+
+        // Hiển thị article được chọn
+        targetElement.classList.remove('hidden');
+        
+        window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+        });
+    });
+});
+     </script>
+</body>
+
+</html>
